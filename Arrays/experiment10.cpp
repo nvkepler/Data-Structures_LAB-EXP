@@ -1,11 +1,11 @@
 #include<iostream>
 using namespace std;
 
-class mAndsSort {
-
+class mAndsSort
+{
 	public:
-	void Sort(int a1[],int a2[],int s1,int s2) {
-
+	void Sort(int a1[],int a2[],int s1,int s2)
+	{
 		selectionSort(a1,s1);
 		selectionSort(a2,s2);
 
@@ -38,10 +38,10 @@ class mAndsSort {
 		for(int i=0;i<s;i++) {
 
 			min_ind = i;
-			for(int j=i+1;j<s;j++) {
-
-				if(a[min_ind]>a[j]) {
-
+			for(int j=i+1;j<s;j++)
+			{
+				if(a[min_ind]>a[j])
+				{
 					min_ind = j;
 					break;
 				}
@@ -68,10 +68,9 @@ class mAndsSort {
 
 	void combine(int arr[], int l, int m, int h)
 	{
-    		int n1 = m - l + 1;
+    	int n1 = m - l + 1;
 		int n2 =  h - m;
-
-	        int L[n1], R[n2];
+		int L[n1], R[n2];
 
   		int i,j,k;
   		for (i = 0; i < n1; i++)
@@ -97,24 +96,93 @@ class mAndsSort {
         		k++;
     		}
 
-	    	while (i < n1)
+	    while (i < n1)
 		{
-		        arr[k] = L[i];
-		        i++;
-		        k++;
+		    arr[k] = L[i];
+		    i++;
+		    k++;
 		}
 
 		while (j < n2)
-	       {
-		        arr[k] = R[j];
-		        j++;
-		        k++;
+	    {void getArr()
+		{
+			cout<<"Enter size of Array\n";
+			cin>>size;
+			arr=new int[size];
+			cout<<"Enter elements for Array\n";
+			for(int i=0;i<size;i++)
+			{
+				cin>>*(arr+i);
+			}
+		}
+		void binarySearch()
+		{
+			int val,flag=0,mid;
+			int ub=size;
+			int lb=0;
+			bubbleSort();
+			cout<<"Enter element to search in the array\n";
+			cin>>val;
+			while(lb<=ub)
+			{
+				mid=int((ub+lb)/2);
+				if(arr[mid]==val)
+				{
+					cout<<"Element found at "<<mid<<" index\n";
+					flag=1;
+					break;
+				}
+				else
+				{
+					if(val<arr[mid])
+					{
+						ub=mid-1;
+					}
+					else
+					{
+						lb=mid+1;
+					}
+				}
+			}
+			if(flag==0)
+			{
+				cout<<"Element not found\n";
+			}
+		}
+		void printArr()
+		{
+			for(int i=0;i<size;i++)
+			{
+				cout<<*(arr+i)<<" ";
+			}
+			cout<<endl;
+		}
+
+		void bubbleSort()
+		{
+			for(int i=0;i<size;i++)
+			{
+				for(int j=1;j<(size-i);j++)
+				{
+					if(arr[j-1] > arr[j])
+					{
+						int temp = arr[j-1];
+						arr[j-1] = arr[j];
+						arr[j] = temp;
+					}
+				}
+			}
+			printArr();
+		}
+		    arr[k] = R[j];
+		    j++;
+		    k++;
 		}
 	}
 };
 
-int main() {
-
+int main()
+{
 	int size1,size2;
 	cout<<"Enter size of first Array\n";
 	cin>>size1;
@@ -123,13 +191,13 @@ int main() {
 	int arr1[size1];
 	int arr2[size2];
 	cout<<"Enter elements in first array\n";
-	for(int i=0;i<size1;i++) {
-
+	for(int i=0;i<size1;i++)
+	{
 		cin>>arr1[i];
 	}
 	cout<<"Enter elements in second array\n";
-	for(int i=0;i<size2;i++) {
-
+	for(int i=0;i<size2;i++)
+	{
 		cin>>arr2[i];
 	}
 

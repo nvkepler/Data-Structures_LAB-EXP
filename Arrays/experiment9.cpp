@@ -1,8 +1,8 @@
 #include<iostream>
 using namespace std;
 
-int Pivot(int a[],int lb,int ub) {
-
+int Pivot(int a[],int lb,int ub)
+{
 	int left =lb;
 	int right = ub;
 	int loc = lb;
@@ -10,22 +10,27 @@ int Pivot(int a[],int lb,int ub) {
 	{
 		right=right-1;
 	}
+
 	if(loc==right)
 	{
 		return loc;
 	}
+
 	int temp = a[loc];
 	a[loc] = a[right];
 	a[right] = temp;
 	loc = right;
+
 	while((a[left]<=a[loc]) && (loc!=left))
 	{
 		left=left+1;
 	}
+
 	if(loc==left)
 	{
 		return loc;
 	}
+	
 	temp = a[loc];
 	a[loc] = a[left];
 	a[left] = temp;
@@ -60,5 +65,3 @@ int main()
 		cout<<a[i]<<" ";
 	}
 }
-
-

@@ -1,47 +1,53 @@
 #include<iostream>
 using namespace std;
+
 class Array
 {
 	int *arr,size;
 	public:
-	void getArr()
-	{
-		cout<<"Enter size of Array\n";
-		cin>>size;
-		arr=new int[size];
-		cout<<"Enter elements for Array\n";
-		for(int i=0;i<size;i++)
+		void getArr()
 		{
-			cin>>*(arr+i);
-		}
-	}
-	void linearSearch()
-	{
-		int val,i;
-		cout<<"Enter element to search in the array\n";
-		cin>>val;
-		for(i=0;i<size;i++)
-		{
-			if(val==*(arr+i))
+			cout<<"Enter size of Array\n";
+			cin>>size;
+			arr=new int[size];
+			cout<<"Enter elements for Array\n";
+			for(int i=0;i<size;i++)
 			{
-				cout<<"Element found\n";
-				break;
+				cin>>*(arr+i);
 			}
 		}
-		if(i==size)
+
+
+		void linearSearch()
 		{
-			cout<<"Element not found\n";
+			int val,i;
+			cout<<"Enter element to search in the array\n";
+			cin>>val;
+			for(i=0;i<size;i++)
+			{
+				if(val==*(arr+i))
+				{
+					cout<<"Element found\n";
+					break;
+				}
+			}
+			if(i==size)
+			{
+				cout<<"Element not found\n";
+			}
 		}
-	}
-	void printArr()
-	{
-		for(int i=0;i<size;i++)
+
+
+		void printArr()
 		{
-			cout<<*(arr+i)<<" ";
+			for(int i=0;i<size;i++)
+			{
+				cout<<*(arr+i)<<" ";
+			}
+			cout<<endl;
 		}
-		cout<<endl;
-	}
 };
+
 int main()
 {
 	Array a;
@@ -50,4 +56,3 @@ int main()
 	a.printArr();
 	return 0;
 }
-			

@@ -1,8 +1,8 @@
 #include<iostream>
 using namespace std;
 
-int* insertionSort(int a[],int size) {
-
+int* insertionSort(int a[],int size)
+{
 	int num,i,j;
 	for(int i=1;i<size;i++) {
 
@@ -19,21 +19,23 @@ int* insertionSort(int a[],int size) {
 	return a;
 };
 
-int main() {
-
+int main()
+{
 	int n,ent;
 	cout<<"Enter size of array\n";
 	cin>>n;
 	int *arr = new int[n+1];
 
-	for(int i=0;i<n;i++) {
-
+	for(int i=0;i<n;i++)
+	{
 		cin>>arr[i];
 	}
 	arr = insertionSort(arr,n);
 
 	cout<<"Insertion sort:-\n";
-	for(int i=0;i<n;i++) {
+
+	for(int i=0;i<n;i++)
+	{
 
 		cout<<arr[i]<<"\t";
 	}
@@ -44,8 +46,8 @@ int main() {
 	arr = insertionSort(arr,n+1);
 
 	cout<<"Insertion sort:-\n";
-	for(int i=0;i<n+1;i++) {
-
+	for(int i=0;i<n+1;i++)
+	{
 		cout<<arr[i]<<"\t";
 	}
 }
